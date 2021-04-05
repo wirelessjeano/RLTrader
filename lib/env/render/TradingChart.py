@@ -3,13 +3,17 @@ import sys
 import numpy as np
 import pandas as pd
 import matplotlib
+matplotlib.use("TkAgg")
 import matplotlib.pyplot as plt
+
 
 from matplotlib import style
 from datetime import datetime
 from pandas.plotting import register_matplotlib_converters
 
 style.use('ggplot')
+
+
 register_matplotlib_converters()
 
 VOLUME_CHART_HEIGHT = 0.33

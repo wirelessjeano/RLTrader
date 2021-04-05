@@ -12,6 +12,7 @@ from lib.env.trade import BaseTradeStrategy, SimulatedTradeStrategy
 from lib.data.providers import BaseDataProvider
 from lib.data.features.transform import max_min_normalize, mean_normalize, log_and_difference, difference
 from lib.util.logger import init_logger
+from lib.util.benchmarks import buy_and_hodl, rsi_divergence, sma_crossover
 
 
 class TradingEnvAction(Enum):
@@ -56,6 +57,22 @@ class TradingEnv(gym.Env):
                                              min_amount_limit=self.min_amount_limit)
 
         self.render_benchmarks: List[Dict] = kwargs.get('render_benchmarks', [])
+
+        self.render_benchmarks = [
+            {
+                'label': 'Buy and HODL',
+                'values': buy_and_hodl(self.data_provider.data_frame['Close'], initial_balance, commissionPercent)
+            },
+            {
+                'label': 'RSI Divergence',
+                'values': rsi_divergence(self.data_provider.data_frame['Close'], initial_balance, commissionPercent)
+            },
+            {
+                'label': 'SMA Crossover',
+                'values': sma_crossover(self.data_provider.data_frame['Close'], initial_balance, commissionPercent)
+            },
+        ]
+        
         self.normalize_obs: bool = kwargs.get('normalize_obs', True)
         self.stationarize_obs: bool = kwargs.get('stationarize_obs', True)
         self.normalize_rewards: bool = kwargs.get('normalize_rewards', False)
@@ -226,6 +243,7 @@ class TradingEnv(gym.Env):
         return obs, reward, done, {'net_worths': self.net_worths, 'timestamps': self.timestamps}
 
     def render(self, mode='human'):
+       
         if mode == 'system':
             self.logger.info('Price: ' + str(self._current_price()))
             self.logger.info('Bought: ' + str(self.account_history['asset_bought'][self.current_step]))

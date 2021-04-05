@@ -3,12 +3,12 @@ pandas
 sklearn
 matplotlib
 gym
-stable_baselines
-optuna
-ta
-statsmodels==0.10.0rc2
+stable-baselines==2.10.1
+optuna==0.12.0
+ta==0.4.5
+statsmodels
 empyrical
 ccxt
-psycopg2
+psycopg2-binary
 configparser
 quantstats>=0.0.17

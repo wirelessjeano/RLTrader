@@ -1,0 +1,25 @@
+Collecting quantstats
+  Using cached QuantStats-0.0.30-py2.py3-none-any.whl
+Requirement already satisfied: pandas>=0.24.0 in ./venv/lib/python3.7/site-packages (from quantstats) (1.2.3)
+Requirement already satisfied: yfinance>=0.1.55 in ./venv/lib/python3.7/site-packages (from quantstats) (0.1.59)
+Requirement already satisfied: numpy>=1.16.5 in ./venv/lib/python3.7/site-packages (from quantstats) (1.20.2)
+Requirement already satisfied: tabulate>=0.8.0 in ./venv/lib/python3.7/site-packages (from quantstats) (0.8.9)
+Requirement already satisfied: seaborn>=0.9.0 in ./venv/lib/python3.7/site-packages (from quantstats) (0.11.1)
+Requirement already satisfied: scipy>=1.2.0 in ./venv/lib/python3.7/site-packages (from quantstats) (1.6.2)
+Requirement already satisfied: matplotlib>=3.0.0 in ./venv/lib/python3.7/site-packages (from quantstats) (3.4.1)
+Requirement already satisfied: kiwisolver>=1.0.1 in ./venv/lib/python3.7/site-packages (from matplotlib>=3.0.0->quantstats) (1.3.1)
+Requirement already satisfied: pyparsing>=2.2.1 in ./venv/lib/python3.7/site-packages (from matplotlib>=3.0.0->quantstats) (2.4.7)
+Requirement already satisfied: pillow>=6.2.0 in ./venv/lib/python3.7/site-packages (from matplotlib>=3.0.0->quantstats) (7.2.0)
+Requirement already satisfied: cycler>=0.10 in ./venv/lib/python3.7/site-packages (from matplotlib>=3.0.0->quantstats) (0.10.0)
+Requirement already satisfied: python-dateutil>=2.7 in ./venv/lib/python3.7/site-packages (from matplotlib>=3.0.0->quantstats) (2.8.1)
+Requirement already satisfied: six in ./venv/lib/python3.7/site-packages (from cycler>=0.10->matplotlib>=3.0.0->quantstats) (1.15.0)
+Requirement already satisfied: pytz>=2017.3 in ./venv/lib/python3.7/site-packages (from pandas>=0.24.0->quantstats) (2021.1)
+Requirement already satisfied: requests>=2.20 in ./venv/lib/python3.7/site-packages (from yfinance>=0.1.55->quantstats) (2.25.1)
+Requirement already satisfied: lxml>=4.5.1 in ./venv/lib/python3.7/site-packages (from yfinance>=0.1.55->quantstats) (4.6.3)
+Requirement already satisfied: multitasking>=0.0.7 in ./venv/lib/python3.7/site-packages (from yfinance>=0.1.55->quantstats) (0.0.9)
+Requirement already satisfied: idna<3,>=2.5 in ./venv/lib/python3.7/site-packages (from requests>=2.20->yfinance>=0.1.55->quantstats) (2.10)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in ./venv/lib/python3.7/site-packages (from requests>=2.20->yfinance>=0.1.55->quantstats) (1.26.4)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.7/site-packages (from requests>=2.20->yfinance>=0.1.55->quantstats) (2020.12.5)
+Requirement already satisfied: chardet<5,>=3.0.2 in ./venv/lib/python3.7/site-packages (from requests>=2.20->yfinance>=0.1.55->quantstats) (4.0.0)
+Installing collected packages: quantstats
+Successfully installed quantstats-0.0.30
